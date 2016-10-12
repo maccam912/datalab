@@ -37,7 +37,7 @@ ERR_TUNNEL_FAILED=7
 ERR_GATEWAY_FAILED=7
 
 run_login() {
-  local login_cmd=${1:-"gcloud auth login"}
+  local login_cmd=${1:-"gcloud auth login --no-launch-browser"}
 
   USER_EMAIL=`gcloud auth list --format="value(account)"`
   if [[ -z "${USER_EMAIL}" ]]; then
